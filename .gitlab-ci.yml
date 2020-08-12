@@ -1,0 +1,5 @@
+include:
+  - project: 'FreeRTLS/FreeRTLS'
+    ref: master
+    file: '/.gitlab-ci.yml'
+

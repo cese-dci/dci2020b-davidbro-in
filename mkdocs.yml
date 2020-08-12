@@ -1,0 +1,23 @@
+site_name: !!python/object/apply:os.getenv ["SITE_NAME"]
+repo_url: !!python/object/apply:os.getenv ["CI_PROJECT_URL"]
+site_url: !!python/object/apply:os.getenv ["CI_PAGES_URL"]  
+use_directory_urls: false
+markdown_extensions:
+    - footnotes
+theme: readthedocs
+plugins:
+    - search
+    - bibtex:
+        bib_file: "docs/refs.bib"
+        cite_style: "pandoc"
+    
+nav:
+    - Inicio: index.md
+    - Requerimientos: 
+        - requirements/index.md
+        - Características: 
+            - Bluetooth: features/bluetooth.md
+            - Micro USB-B: features/microUSB.md
+    - Arquitectura: 
+        - architecture/index.md
+
