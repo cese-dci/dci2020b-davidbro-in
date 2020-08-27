@@ -6,7 +6,7 @@ encoding utf-8
 Sheet 1 1
 Title "FreeRTLS Beacon Electronics"
 Date "2020-08-27"
-Rev "¡work in progress!"
+Rev "WIP!"
 Comp "FreeRTLS"
 Comment1 ""
 Comment2 ""
