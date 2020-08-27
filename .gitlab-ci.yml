@@ -3,3 +3,93 @@ include:
     ref: master
     file: '/.gitlab-ci.yml'
 
+### PCB Ops
+image:
+  name: registry.gitlab.com/davidbro-in/kicad-automation-image
+
+variables:
+  PYTHON: python3
+  EEPLOT: eeplot
+  PROJECT: $CI_PROJECT_NAME
+  PLOT_SCRIPT: /kicad_cicd/plotter.py
+  BOM_SCRIPT: /kicad_cicd/bomfromsch.py
+  POS_SCRIPT: /kicad_cicd/fabrication_positions.py
+  PROJECT_DIR: kicad
+  LIB_DIR: libs
+
+gerbers:
+  stage: build
+  script:
+    - if [ ! -z ${CI_BUILD_TAG} ]; then sed -i "s/<¡work in progress\!>/${CI_BUILD_TAG}/g" $PROJECT_DIR/$PROJECT.kicad_pcb; fi
+    - $PYTHON $PLOT_SCRIPT $PROJECT_DIR/$PROJECT.kicad_pcb gerbers
+    - cd gerbers
+    - zip ../gerbers.zip *
+    - cd ../
+  when: always
+  artifacts:
+    paths:
+      - gerbers.zip
+  tags:
+    - docker-linux
+    
+sch_plot:
+  stage: build
+  script:
+    - $EEPLOT $LIB_DIR/*.lib $PROJECT_DIR/$PROJECT.pro -o $PROJECT.pdf
+  when: always
+  artifacts:
+    paths:
+      - $PROJECT.pdf
+  tags:
+    - docker-linux
+    
+bom:
+  stage: build
+  script:
+    - $PYTHON $BOM_SCRIPT -g $PROJECT_DIR/$PROJECT.sch $PROJECT.csv
+  when: always
+  artifacts:
+    paths:
+      - $PROJECT.csv
+  tags:
+    - docker-linux
+
+centroid:
+  stage: build
+  script:
+    - $PYTHON $POS_SCRIPT $PROJECT_DIR/$PROJECT.kicad_pcb
+    - mv -v kicad/"${PROJECT}_POS_All.txt" "${PROJECT}_POS_All.txt"
+  when: always
+  artifacts:
+    paths:
+      - "${PROJECT}_POS_All.txt"
+  tags:
+    - docker-linux
+
+.deploy:
+  image: ubuntu:18.04
+  stage: deploy
+  variables:
+   GIT_STRATEGY: none
+  before_script:
+    - apt update
+    - apt install -y zip
+  script: 
+   - mv gerbers.zip "${PROJECT}_${CI_BUILD_TAG}_gerbers.zip"
+   - zip -r "${PROJECT}_${CI_BUILD_TAG}.zip" "${PROJECT}_${CI_BUILD_TAG}_gerbers.zip"
+   - mv $PROJECT.pdf ${PROJECT}_${CI_BUILD_TAG}.pdf
+   - zip -u "${PROJECT}_${CI_BUILD_TAG}.zip" ${PROJECT}_${CI_BUILD_TAG}.pdf
+   - mv $PROJECT.csv ${PROJECT}_${CI_BUILD_TAG}.csv
+   - zip -u "${PROJECT}_${CI_BUILD_TAG}.zip" ${PROJECT}_${CI_BUILD_TAG}.csv
+   - mv ${PROJECT}_POS_All.txt ${PROJECT}_POS_All_${CI_BUILD_TAG}.txt
+   - zip -u "${PROJECT}_${CI_BUILD_TAG}.zip" ${PROJECT}_POS_All_${CI_BUILD_TAG}.txt
+   #- ${PROJECT}_${CI_BUILD_TAG}.zip
+   #- rm -r ./* || true
+  dependencies:
+   - gerbers
+   - sch_plot
+   - bom
+   - centroid
+  only:
+   - tags
+
