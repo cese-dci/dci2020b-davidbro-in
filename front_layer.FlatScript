@@ -1,0 +1,24 @@
+## Isolate Front Copper
+open_gerber $env(FOLDER)/$env(NAME)-F_Cu.gtl
+isolate $env(NAME)-F_Cu.gtl -dia 0.15 -passes 1 -overlap 20 -combine True -iso_type 0 -outname $env(NAME)-F_Cu.gtl_iso
+cncjob $env(NAME)-F_Cu.gtl_iso -dia 0.15 -z_cut -0.08 -z_move 2 -feedrate 50  -feedrate_z  50 -pp default -endz 35 -outname $env(NAME)-F_Cu.gtl_iso_cnc
+write_gcode $env(NAME)-F_Cu.gtl_iso_cnc $env(OUTPUT_DIR)/1_$env(NAME)-F_Cu.gtl_iso_cnc.txt
+
+## Drills
+open_excellon $env(FOLDER)/$env(NAME).drl
+drillcncjob $env(NAME).drl -drillz -1.8 -travelz 2 -feedrate_z 50 -spindlespeed 11000 -endz 35 -endxy 0,0 -outname $env(NAME).drl_cnc
+write_gcode $env(NAME).drl_cnc $env(OUTPUT_DIR)/2_$env(NAME).drl_cnc.txt
+
+## Cutout
+open_gerber $env(FOLDER)/$env(NAME)-Edge_Cuts.gm1
+cutout $env(NAME)-Edge_Cuts.gm1 -dia 2 -margin 0.5 -gapsize 0.6 -gaps lr -outname $env(NAME)-Edge_Cuts.gm1_iso
+cncjob $env(NAME)-Edge_Cuts.gm1_iso -dia 2 -z_cut -1.8 -z_move 2 -feedrate 50  -feedrate_z  50 -pp default -endz 35 -dpp 0.6 -outname  $env(NAME)-Edge_Cuts.gm1_iso_cnc
+write_gcode $env(NAME)-Edge_Cuts.gm1_iso_cnc $env(OUTPUT_DIR)/3_$env(NAME)-Edge_Cuts.gm1_iso_cnc.txt
+
+## Save and Plot
+plot_all
+save_project $env(FOLDER)/$env(NAME).FlatPrj
+save
+quit_flatcam
+
+

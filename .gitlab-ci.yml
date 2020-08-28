@@ -3,3 +3,79 @@ include:
     ref: master
     file: '/.gitlab-ci.yml'
 
+### PCB Ops
+image:
+  name: registry.gitlab.com/davidbro-in/kicad-automation-image
+
+variables:
+  PYTHON: python3
+  EEPLOT: eeplot
+  PROJECT: $CI_PROJECT_NAME
+  PLOT_SCRIPT: /kicad_cicd/plotter.py
+  BOM_SCRIPT: /kicad_cicd/bomfromsch.py
+  POS_SCRIPT: /kicad_cicd/fabrication_positions.py
+  PROJECT_DIR: kicad
+  LIB_DIR: libs
+
+gerbers:
+  stage: build
+  script:
+    - '[ ! -z ${CI_BUILD_TAG} ] && sed -i "s/WIP\!/${CI_BUILD_TAG}/g" $PROJECT_DIR/$PROJECT.kicad_pcb'
+    - $PYTHON $PLOT_SCRIPT $PROJECT_DIR/$PROJECT.kicad_pcb gerbers
+    - cd gerbers
+    - zip ../gerbers.zip *
+    - cd ../
+  when: always
+  artifacts:
+    paths:
+      - gerbers.zip
+    
+sch_plot:
+  stage: build
+  script:
+    - '[ ! -z ${CI_BUILD_TAG} ] && sed -i "s/WIP\!/${CI_BUILD_TAG}/g" $PROJECT_DIR/$PROJECT.sch'
+    - $EEPLOT $LIB_DIR/*.lib $PROJECT_DIR/$PROJECT.pro -o $PROJECT.pdf
+  when: always
+  artifacts:
+    paths:
+      - $PROJECT.pdf
+    
+bom:
+  stage: build
+  script:
+    - $PYTHON $BOM_SCRIPT -g $PROJECT_DIR/$PROJECT.sch $PROJECT.csv
+  when: always
+  artifacts:
+    paths:
+      - $PROJECT.csv
+
+centroid:
+  stage: build
+  script:
+    - $PYTHON $POS_SCRIPT $PROJECT_DIR/$PROJECT.kicad_pcb
+    - mv -v kicad/"${PROJECT}_POS_All.txt" "${PROJECT}_POS_All.txt"
+  when: always
+  artifacts:
+    paths:
+      - "${PROJECT}_POS_All.txt"
+
+cnc_job:
+  image: registry.gitlab.com/davidbro-in/flatcam-image:master
+  stage: .post
+  variables:
+    NAME: $CI_PROJECT_NAME
+    FOLDER: $CI_PROJECT_DIR/gerbers
+    OUTPUT_DIR: $CI_PROJECT_DIR/cnc_files
+  script:
+    - unzip gerbers.zip -d gerbers
+    - mkdir cnc_files
+    - Xvfb :1 -screen 0 1024x768x16 &
+    - DISPLAY=:1 python3 /flatcam/FlatCAM.py --shellfile=$CI_PROJECT_DIR/front_layer.FlatScript --headless=1 &
+    - sleep 30 && killall python3
+  when: manual
+  artifacts:
+    paths:
+      - cnc_files/
+    expire_in: 1 week
+  dependencies:
+   - gerbers
