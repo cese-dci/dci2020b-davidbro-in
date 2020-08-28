@@ -64,7 +64,7 @@ cnc_job:
   stage: .post
   variables:
     NAME: $CI_PROJECT_NAME
-    FOLDER: gerbers
+    FOLDER: $CI_PROJECT_DIR/gerbers
   script:
     - unzip gerbers.zip -d gerbers
     - Xvfb :1 -screen 0 1024x768x16 &
