@@ -3,7 +3,7 @@
   (general
     (thickness 1.6)
     (drawings 5)
-    (tracks 0)
+    (tracks 1)
     (zones 0)
     (modules 0)
     (nets 1)
@@ -114,5 +114,7 @@
   (gr_text "Rev: WIP!" (at 97.663 67.056) (layer F.SilkS)
     (effects (font (size 1.5 1.5) (thickness 0.3)))
   )
+
+  (segment (start 93.218 70.866) (end 113.919 70.866) (width 0.25) (layer F.Cu) (net 0))
 
 )
