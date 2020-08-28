@@ -1,7 +1,7 @@
-include:
-  - project: 'FreeRTLS/FreeRTLS'
-    ref: master
-    file: '/.gitlab-ci.yml'
+#include:
+#  - project: 'FreeRTLS/FreeRTLS'
+#    ref: master
+#    file: '/.gitlab-ci.yml'
 
 ### PCB Ops
 image:
@@ -30,7 +30,7 @@ gerbers:
     paths:
       - gerbers.zip
     
-sch_plot:
+.sch_plot:
   stage: build
   script:
     - '[ ! -z ${CI_BUILD_TAG} ] && sed -i "s/WIP\!/${CI_BUILD_TAG}/g" $PROJECT_DIR/$PROJECT.sch'
@@ -40,7 +40,7 @@ sch_plot:
     paths:
       - $PROJECT.pdf
     
-bom:
+.bom:
   stage: build
   script:
     - $PYTHON $BOM_SCRIPT -g $PROJECT_DIR/$PROJECT.sch $PROJECT.csv
@@ -49,7 +49,7 @@ bom:
     paths:
       - $PROJECT.csv
 
-centroid:
+.centroid:
   stage: build
   script:
     - $PYTHON $POS_SCRIPT $PROJECT_DIR/$PROJECT.kicad_pcb
@@ -64,12 +64,13 @@ cnc_job:
   stage: .post
   variables:
     NAME: $CI_PROJECT_NAME
+    FOLDER: ../gerbers
   script:
     - unzip gerbers.zip -d gerbers
+    - mv -v /flatcam .
+    - cd flatcam
     - Xvfb :1 -screen 0 1024x768x16 &
-    - export FOLDER=$CI_PROJECT_DIR/gerbers
-    - ls $FOLDER
-    - DISPLAY=:1 python3 /flatcam/FlatCAM.py --shellfile=$CI_PROJECT_DIR/front_layer.FlatScript --headless=1 &
+    - DISPLAY=:1 python3 FlatCAM.py --shellfile=../front_layer.FlatScript --headless=1 &
     - sleep 30 && killall python3
   artifacts:
     paths:
