@@ -64,11 +64,11 @@ cnc_job:
   stage: .post
   variables:
     NAME: $CI_PROJECT_NAME
-    FOLDER: gerbers
+    FOLDER: $CI_PROJECT_DIR/gerbers
   script:
     - unzip gerbers.zip -d gerbers
     - Xvfb :1 -screen 0 1024x768x16 &
-    - DISPLAY=:1 python3 /flatcam/FlatCAM.py --shellfile=front_layer.FlatScript --headless=1 &
+    - DISPLAY=:1 python3 /flatcam/FlatCAM.py --shellfile=$CI_PROJECT_DIR/front_layer.FlatScript --headless=1 &
     - sleep 30 && killall python3
   artifacts:
     paths:
