@@ -3,7 +3,7 @@
   (general
     (thickness 1.6)
     (drawings 5)
-    (tracks 1)
+    (tracks 2)
     (zones 0)
     (modules 0)
     (nets 1)
@@ -116,5 +116,6 @@
   )
 
   (segment (start 93.218 70.866) (end 113.919 70.866) (width 0.25) (layer F.Cu) (net 0))
+  (via (at 123.698 70.866) (size 0.8) (drill 0.4) (layers F.Cu B.Cu) (net 0))
 
 )
