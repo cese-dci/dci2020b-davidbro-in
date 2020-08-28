@@ -1,7 +1,7 @@
-#include:
-#  - project: 'FreeRTLS/FreeRTLS'
-#    ref: master
-#    file: '/.gitlab-ci.yml'
+include:
+  - project: 'FreeRTLS/FreeRTLS'
+    ref: master
+    file: '/.gitlab-ci.yml'
 
 ### PCB Ops
 image:
@@ -30,7 +30,7 @@ gerbers:
     paths:
       - gerbers.zip
     
-.sch_plot:
+sch_plot:
   stage: build
   script:
     - '[ ! -z ${CI_BUILD_TAG} ] && sed -i "s/WIP\!/${CI_BUILD_TAG}/g" $PROJECT_DIR/$PROJECT.sch'
@@ -40,7 +40,7 @@ gerbers:
     paths:
       - $PROJECT.pdf
     
-.bom:
+bom:
   stage: build
   script:
     - $PYTHON $BOM_SCRIPT -g $PROJECT_DIR/$PROJECT.sch $PROJECT.csv
@@ -49,7 +49,7 @@ gerbers:
     paths:
       - $PROJECT.csv
 
-.centroid:
+centroid:
   stage: build
   script:
     - $PYTHON $POS_SCRIPT $PROJECT_DIR/$PROJECT.kicad_pcb
@@ -72,36 +72,10 @@ cnc_job:
     - Xvfb :1 -screen 0 1024x768x16 &
     - DISPLAY=:1 python3 /flatcam/FlatCAM.py --shellfile=$CI_PROJECT_DIR/front_layer.FlatScript --headless=1 &
     - sleep 30 && killall python3
+  when: manual
   artifacts:
     paths:
       - cnc_files/
     expire_in: 1 week
   dependencies:
    - gerbers
-
-.deploy:
-  image: ubuntu:18.04
-  stage: deploy
-  variables:
-   GIT_STRATEGY: none
-  before_script:
-    - apt update
-    - apt install -y zip
-  script: 
-   - mv gerbers.zip "${PROJECT}_${CI_BUILD_TAG}_gerbers.zip"
-   - zip -r "${PROJECT}_${CI_BUILD_TAG}.zip" "${PROJECT}_${CI_BUILD_TAG}_gerbers.zip"
-   - mv $PROJECT.pdf ${PROJECT}_${CI_BUILD_TAG}.pdf
-   - zip -u "${PROJECT}_${CI_BUILD_TAG}.zip" ${PROJECT}_${CI_BUILD_TAG}.pdf
-   - mv $PROJECT.csv ${PROJECT}_${CI_BUILD_TAG}.csv
-   - zip -u "${PROJECT}_${CI_BUILD_TAG}.zip" ${PROJECT}_${CI_BUILD_TAG}.csv
-   - mv ${PROJECT}_POS_All.txt ${PROJECT}_POS_All_${CI_BUILD_TAG}.txt
-   - zip -u "${PROJECT}_${CI_BUILD_TAG}.zip" ${PROJECT}_POS_All_${CI_BUILD_TAG}.txt
-   #- ${PROJECT}_${CI_BUILD_TAG}.zip
-   #- rm -r ./* || true
-  dependencies:
-   - gerbers
-   - sch_plot
-   - bom
-   - centroid
-  only:
-   - tags
