@@ -43,11 +43,11 @@ sch_plot:
 bom:
   stage: build
   script:
-    - $PYTHON $BOM_SCRIPT -g $PROJECT_DIR/$PROJECT.sch $PROJECT.csv
+    - $PYTHON $BOM_SCRIPT -g $PROJECT_DIR/$PROJECT.sch docs/$PROJECT.csv
   when: always
   artifacts:
     paths:
-      - $PROJECT.csv
+      - docs/$PROJECT.csv
 
 centroid:
   stage: build
