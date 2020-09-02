@@ -34,11 +34,11 @@ sch_plot:
   stage: build
   script:
     - '[ ! -z ${CI_BUILD_TAG} ] && sed -i "s/WIP\!/${CI_BUILD_TAG}/g" $PROJECT_DIR/$PROJECT.sch'
-    - $EEPLOT $LIB_DIR/*.lib $PROJECT_DIR/$PROJECT.pro -o $PROJECT.pdf
+    - $EEPLOT $LIB_DIR/*.lib $PROJECT_DIR/$PROJECT.pro -o docs/$PROJECT.pdf
   when: always
   artifacts:
     paths:
-      - $PROJECT.pdf
+      - docs/$PROJECT.pdf
     
 bom:
   stage: build
