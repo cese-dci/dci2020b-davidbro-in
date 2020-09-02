@@ -4,4 +4,5 @@
 
 # Esquemático
 [Aquí](../FreeRTLS-Beacon-Electronics.pdf) puedes ver o descargar el esquemático
-<embed src="../FreeRTLS-Beacon-Electronics.pdf" width="600" height="500" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+
+<embed style="width:100%; height:50vw;" src="../FreeRTLS-Beacon-Electronics.pdf" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
