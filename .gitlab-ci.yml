@@ -17,7 +17,7 @@ variables:
   PROJECT_DIR: kicad
   LIB_DIR: libs
   EXTRA_RELEASE_ARGS: >-
-    --assets-links-name "Esquematico" --assets-links-url "https://gitlab.com/$CI_PROJECT_PATH/-/jobs/artifacts/$(date '+%-Y.%-m.%-d')-build.$CI_JOB_ID/file/docs/$CI_PROJECT_NAME.pdf?job=sch_plot"
+    --assets-links-name "Esquematico" --assets-links-url "https://gitlab.com/job=sch_plot"
     
     #--assets-links-name "Lista de materiales" --assets-links-url "https://gitlab.com/$CI_PROJECT_PATH/-/jobs/artifacts/$(date '+%-Y.%-m.%-d')-build.$CI_JOB_ID/file/docs/$CI_PROJECT_NAME.csv?job=bom"
     #--assets-links-name "Archivos gerber" --assets-links-url "https://gitlab.com/$CI_PROJECT_PATH/-/jobs/artifacts/$(date '+%-Y.%-m.%-d')-build.$CI_JOB_ID/file/gerbers.zip?job=gerbers"
