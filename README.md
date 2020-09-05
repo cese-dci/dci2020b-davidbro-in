@@ -55,4 +55,3 @@ Si quieres contactarme puedes hacerlo a davidmbroin@gmail.com.
 Este proyecto usa la siguiente licencia: [CERN Open Hardware Licence Version 2 - Permissive](LICENSE.md).
 
 \bibliography
-
