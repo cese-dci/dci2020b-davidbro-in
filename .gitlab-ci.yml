@@ -2,7 +2,6 @@ include:
   - project: 'FreeRTLS/FreeRTLS'
     ref: master
     file: '/.gitlab/ci/common.yml'
-  - template: 'Workflows/MergeRequest-Pipelines.gitlab-ci.yml'
 
 ### PCB Ops
 image:
