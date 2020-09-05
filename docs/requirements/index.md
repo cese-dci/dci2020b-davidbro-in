@@ -36,16 +36,19 @@ toda la información necesaria para modificar y enviar a fabricar este circuito.
 - **RTLS (_Real Time Location System_):** Sistema de localización en tiempo real
 -  **Balizas (_Beacons_):** Dispositivos electrónicos que transmiten una señal como 
 referencia.
-- **UWB:** En inglés, *Ultra wideband*. Sistema de comunicaciones de gran ancho de banda.
-- **PCB:** En inglés, _Printed Circuit Board_. Placa de circuito impreso, es un circuito
-impreso en una placa de material aislante.
+- **UWB:** En inglés, *Ultra wideband*. Sistema de comunicaciones de gran ancho 
+de banda.
+- **PCB:** En inglés, _Printed Circuit Board_. Placa de circuito impreso, es un 
+circuito impreso en una placa de material aislante.
 
 ### Criterio de liberación (_Release criteria_)
 #### Funcionalidad
-Cualquier usuario usando **FreeRTLS App** puede ver su ubicación dentro de un recinto 
-cerrado debidamente acondicionado. Es decir, una vez colocadas las **FreeRTLS Beacons** 
-como referencia de ubicación, desde la **FreeRTLS App** se puede ver la ubicación en 
-tiempo real (actualización cada 10 segundos).
+La idea de este proyecto es ser _plug and play_. Es decir, el usuario no tiene que 
+hacer más que conectarlo para usarlo. En caso de querer grabar un nuevo _firmware_,
+el usuario dispone de J-Link a través del puerto USB. A su vez, en el mismo puerto 
+USB está disponible un puerto serial para monitorear al módulo principal.
+
+Consultar el [índice de características](features/index.md) para más detalle.
 
 #### Usabilidad
 El sistema deberá estar auto-documentado. Esto quiere decir que un usuario con manejo 
