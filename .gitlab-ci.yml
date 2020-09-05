@@ -16,6 +16,7 @@ variables:
   POS_SCRIPT: /kicad_cicd/fabrication_positions.py
   PROJECT_DIR: kicad
   LIB_DIR: libs
+  EXTRA_RELEASE_ARGS: --assets-links-name "Documentación de esta versión" --assets-links-url "https://gitlab.com/$CI_PROJECT_PATH/-/jobs/artifacts/$(date '+%-Y.%-m.%-d')-build.$CI_JOB_ID/file/public/index.html?job=pages_review"
 
 gerbers:
   stage: build
