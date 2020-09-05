@@ -5,11 +5,18 @@
     se realiza un nuevo lanzamiento.
 
 # Bienvenido a FreeRTLS Beacon Electronics
-**FreeRTLS Beacon Electronics** es .... _Open Source_. 
+**FreeRTLS Beacon Electronics** es una baliza UWB, _Open Source_, basada en el módulo
+[DWM1001C](https://www.decawave.com/product/dwm1001-module/) de [Quorvo (antes Decawave)](https://www.decawave.com/). 
 
 El desarrollo de este proyecto persigue los siguientes objetivos:
 
-...
+- Ser una versión de producción de [DWM1001 _development board_](https://www.decawave.com/product/dwm1001-development-board/)
+
+Al igual que la original placa de desarrollo, posee las siguientes características[@dwm1001dev]:
+
+- Soporte para UWB y _Bluetooth_
+- Interfaz J-Link en la placa para grabar y depurar _firmware_
+- Alimentación a través de micro USB
 
 [Aquí](requirements/index.html#por-que-hacerlo) se puede leer más sobre la motivación por
 la cuál se empezó con este proyecto.
