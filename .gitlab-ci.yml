@@ -36,7 +36,6 @@ gerbers:
     - cd gerbers
     - zip ../gerbers.zip *
     - cd ../
-  when: always
   artifacts:
     paths:
       - gerbers.zip
@@ -47,7 +46,6 @@ sch_plot:
   script:
     - '[ ! -z ${CI_BUILD_TAG} ] && sed -i "s/WIP\!/${CI_BUILD_TAG}/g" $PROJECT_DIR/$PROJECT.sch'
     - $EEPLOT $LIB_DIR/*.lib $PROJECT_DIR/$PROJECT.pro -o docs/$PROJECT.pdf
-  when: always
   artifacts:
     paths:
       - docs/$PROJECT.pdf
@@ -57,7 +55,6 @@ bom:
   stage: build
   script:
     - $PYTHON $BOM_SCRIPT -g $PROJECT_DIR/$PROJECT.sch docs/$PROJECT.csv
-  when: always
   artifacts:
     paths:
       - docs/$PROJECT.csv
@@ -68,7 +65,6 @@ centroid:
   script:
     - $PYTHON $POS_SCRIPT $PROJECT_DIR/$PROJECT.kicad_pcb
     - mv -v kicad/"${PROJECT}_POS_All.txt" "${PROJECT}_POS_All.txt"
-  when: always
   artifacts:
     paths:
       - "${PROJECT}_POS_All.txt"
