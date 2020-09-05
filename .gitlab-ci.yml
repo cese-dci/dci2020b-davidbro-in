@@ -22,6 +22,7 @@ release:
   script: >-
     release-cli create --name $(date '+%-Y.%-m.%-d')-build.$CI_JOB_ID --description "Automatically Released"
     --tag-name $(date '+%-Y.%-m.%-d')-build.$CI_JOB_ID --ref master 
+    --assets-links-name "Documentación de esta versión" --assets-links-url "https://gitlab.com/$CI_PROJECT_PATH/-/jobs/artifacts/$(date '+%-Y.%-m.%-d')-build.$CI_JOB_ID/file/public/index.html?job=pages_review"
     --assets-links-name "Esquemático" --assets-links-url "https://gitlab.com/$CI_PROJECT_PATH/-/jobs/artifacts/$(date '+%-Y.%-m.%-d')-build.$CI_JOB_ID/file/docs/$CI_PROJECT_NAME.pdf?job=sch_plot"
     --assets-links-name "Lista de materiales" --assets-links-url "https://gitlab.com/$CI_PROJECT_PATH/-/jobs/artifacts/$(date '+%-Y.%-m.%-d')-build.$CI_JOB_ID/file/docs/$CI_PROJECT_NAME.csv?job=bom"
     --assets-links-name "Archivos gerber" --assets-links-url "https://gitlab.com/$CI_PROJECT_PATH/-/jobs/artifacts/$(date '+%-Y.%-m.%-d')-build.$CI_JOB_ID/file/gerbers.zip?job=gerbers"
