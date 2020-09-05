@@ -1,7 +1,7 @@
 include:
   - project: 'FreeRTLS/FreeRTLS'
     ref: master
-    file: '/.gitlab-ci.yml'
+    file: '/.gitlab/ci/common.yml'
 
 ### PCB Ops
 image:
