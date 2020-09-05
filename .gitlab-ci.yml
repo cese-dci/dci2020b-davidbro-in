@@ -3,7 +3,6 @@ include:
     ref: master
     file: '/.gitlab/ci/common.yml'
 
-### PCB Ops
 image:
   name: registry.gitlab.com/davidbro-in/kicad-automation-image
 
