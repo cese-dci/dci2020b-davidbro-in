@@ -16,7 +16,7 @@ variables:
   POS_SCRIPT: /kicad_cicd/fabrication_positions.py
   PROJECT_DIR: kicad
   LIB_DIR: libs
-  RELEASE_ARGS: '--name 2020.9.5-build.12 --description "Automatically Released" --tag-name 2020.9.5-build.12 --ref master'
+  RELEASE_ARGS: '--name 2020.9.5-build.122 --description "Automatically Released" --tag-name 2020.9.5-build.122 --ref master'
 
 .gerbers:
   stage: build
