@@ -16,13 +16,7 @@ variables:
   POS_SCRIPT: /kicad_cicd/fabrication_positions.py
   PROJECT_DIR: kicad
   LIB_DIR: libs
-  EXTRA_RELEASE_ARGS: >-
-    '--assets-links-name "Esquematico" --assets-links-url "https://gitlab.com/$CI_PROJECT_PATH/-/jobs/artifacts/$(date "+%-Y.%-m.%-d")-build.$CI_JOB_ID/file/docs/${CI_PROJECT_NAME}.csv?job=bom"'
-    
-    #--assets-links-name "Lista de materiales" --assets-links-url "https://gitlab.com/$CI_PROJECT_PATH/-/jobs/artifacts/$(date '+%-Y.%-m.%-d')-build.$CI_JOB_ID/file/docs/$CI_PROJECT_NAME.csv?job=bom"
-    #--assets-links-name "Archivos gerber" --assets-links-url "https://gitlab.com/$CI_PROJECT_PATH/-/jobs/artifacts/$(date '+%-Y.%-m.%-d')-build.$CI_JOB_ID/file/gerbers.zip?job=gerbers"
-    #--assets-links-name "Posición de componentes" --assets-links-url "https://gitlab.com/$CI_PROJECT_PATH/-/jobs/artifacts/$(date '+%-Y.%-m.%-d')-build.$CI_JOB_ID/file/${CI_PROJECT_NAME}_POS_All.txt?job=centroid"
-
+  EXTRA_RELEASE_ARGS: '--assets-links-name "Esquematico" --assets-links-url "https://gitlab.com/$CI_PROJECT_PATH/-/jobs/artifacts/$(date "+%-Y.%-m.%-d")-build.$CI_JOB_ID/file/docs/${CI_PROJECT_NAME}.csv?job=bom"'
 
 .gerbers:
   stage: build
