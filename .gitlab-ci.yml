@@ -19,10 +19,15 @@ variables:
 
 release:
   extends: .release
-  script:
-    - $RELEASE_CALL
+  script: >-
+    release-cli create --name $(date '+%-Y.%-m.%-d')-build.$CI_JOB_ID --description "Automatically Released"
+    --tag-name $(date '+%-Y.%-m.%-d')-build.$CI_JOB_ID --ref master 
+    --assets-links-name "Esquemático" --assets-links-url "https://gitlab.com/$CI_PROJECT_PATH/-/jobs/artifacts/$(date '+%-Y.%-m.%-d')-build.$CI_JOB_ID/file/docs/$CI_PROJECT_NAME.pdf?job=sch_plot"
+    --assets-links-name "Lista de materiales" --assets-links-url "https://gitlab.com/$CI_PROJECT_PATH/-/jobs/artifacts/$(date '+%-Y.%-m.%-d')-build.$CI_JOB_ID/file/docs/$CI_PROJECT_NAME.csv?job=bom"
+    --assets-links-name "Archivos gerber" --assets-links-url "https://gitlab.com/$CI_PROJECT_PATH/-/jobs/artifacts/$(date '+%-Y.%-m.%-d')-build.$CI_JOB_ID/file/gerbers.zip?job=gerbers"
+    --assets-links-name "Posición de componentes" --assets-links-url "https://gitlab.com/$CI_PROJECT_PATH/-/jobs/artifacts/$(date '+%-Y.%-m.%-d')-build.$CI_JOB_ID/file/${CI_PROJECT_NAME}_POS_All.txt?job=centroid"
 
-.gerbers:
+gerbers:
   stage: build
   script:
     - '[ ! -z ${CI_BUILD_TAG} ] && sed -i "s/WIP\!/${CI_BUILD_TAG}/g" $PROJECT_DIR/$PROJECT.kicad_pcb'
@@ -36,7 +41,7 @@ release:
       - gerbers.zip
     expire_in: 1 week
     
-.sch_plot:
+sch_plot:
   stage: build
   script:
     - '[ ! -z ${CI_BUILD_TAG} ] && sed -i "s/WIP\!/${CI_BUILD_TAG}/g" $PROJECT_DIR/$PROJECT.sch'
@@ -47,7 +52,7 @@ release:
       - docs/$PROJECT.pdf
     expire_in: 1 week
     
-.bom:
+bom:
   stage: build
   script:
     - $PYTHON $BOM_SCRIPT -g $PROJECT_DIR/$PROJECT.sch docs/$PROJECT.csv
@@ -57,7 +62,7 @@ release:
       - docs/$PROJECT.csv
     expire_in: 1 week
 
-.centroid:
+centroid:
   stage: build
   script:
     - $PYTHON $POS_SCRIPT $PROJECT_DIR/$PROJECT.kicad_pcb
@@ -68,7 +73,7 @@ release:
       - "${PROJECT}_POS_All.txt"
     expire_in: 1 week
 
-.cnc_job:
+cnc_job:
   image: registry.gitlab.com/davidbro-in/flatcam-image:master
   stage: .post
   variables:
