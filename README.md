@@ -18,8 +18,8 @@ Al igual que la original placa de desarrollo, posee las siguientes característi
 - Interfaz J-Link en la placa para grabar y depurar _firmware_
 - Alimentación a través de micro USB
 
-[Aquí](requirements/index.html#por-que-hacerlo) se puede leer más sobre la motivación por
-la cuál se empezó con este proyecto.
+[Aquí](requirements/index.html#por-que-hacerlo) se puede leer más sobre la motivación 
+por la cuál se empezó con este proyecto.
 
 La [documentación sobre la arquitectura](docs/architecture/index.md) permite entender cómo
 está compuesto el sistema y cómo interactuán entre sí sus componentes. Cabe mencionar que 
