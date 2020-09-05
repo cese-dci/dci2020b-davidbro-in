@@ -18,6 +18,11 @@ variables:
   LIB_DIR: libs
   RELEASE_ARGS: '--name 2020.9.5-build.122 --description "Automatically Released" --tag-name 2020.9.5-build.122 --ref master'
 
+release:
+  extends: .release
+  script:
+    - $RELEASE_CALL
+
 .gerbers:
   stage: build
   script:
