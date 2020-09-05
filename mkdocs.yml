@@ -4,13 +4,21 @@ site_url: !!python/object/apply:os.getenv ["CI_PAGES_URL"]
 use_directory_urls: false
 markdown_extensions:
     - footnotes
-theme: readthedocs
+    - admonition
+    - toc:
+        permalink: true
+    - pymdownx.tasklist:        
+        clickable_checkbox: true
+theme: 
+    name: readthedocs
+    highlightjs: true
+    hljs_languages:
+        - gherkin
 plugins:
     - search
     - bibtex:
         bib_file: "docs/refs.bib"
         cite_style: "pandoc"
-    
 nav:
     - Inicio: index.md
     - Requerimientos: 
