@@ -25,10 +25,15 @@ La [documentación sobre la arquitectura](docs/architecture/index.md) permite en
 está compuesto el sistema y cómo interactuán entre sí sus componentes. Cabe mencionar que 
 **FreeRTLS Beacon Electronics** está formado por:
 
-...
+- Módulo [DWM1000C](https://www.decawave.com/product/dwm1001-module/)
+- Interfaz J-Link implementada sobre 
+[STM32F072CBTx](https://www.st.com/resource/en/datasheet/stm32f072c8.pdf)
+- Fuente de alimentación a través de microUSB
 
 ### Misión
-**FreeRTLS Beacon Electronics** busca llegar a ...
+**FreeRTLS Beacon Electronics** busca permitir la implementación de sistemas de
+localización en interiores, como es **FreeRTLS** pero no limitado a él. Es un _beacon_
+UWB _open source_ y listo para fabricar o mejorar.
 
 ## Novedades
 Para la lista completa de cambios visita el [control de cambios](CHANGELOG.md).
