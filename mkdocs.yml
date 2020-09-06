@@ -21,8 +21,9 @@ plugins:
         cite_style: "pandoc"
 nav:
     - Inicio: index.md
-    - Requerimientos: requirements/index.md
-    - Características: features/index.md
+    - Requerimientos: 
+        - requirements/index.md
+        - Características: features/index.md
     - Arquitectura: 
         - architecture/index.md
 
