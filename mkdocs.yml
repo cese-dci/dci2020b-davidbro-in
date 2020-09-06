@@ -22,7 +22,7 @@ plugins:
 nav:
     - Inicio: index.md
     - Requerimientos: requirements/index.md
-        - Características: features/index.md
+    - Características: features/index.md
     - Arquitectura: 
         - architecture/index.md
 
