@@ -21,11 +21,8 @@ plugins:
         cite_style: "pandoc"
 nav:
     - Inicio: index.md
-    - Requerimientos: 
-        - requirements/index.md
-        - Características: 
-            - Bluetooth: features/bluetooth.md
-            - Micro USB-B: features/microUSB.md
+    - Requerimientos: requirements/index.md
+    - Características: features/index.md
     - Arquitectura: 
         - architecture/index.md
 
