@@ -20,7 +20,7 @@ plugins:
         bib_file: "docs/refs.bib"
         cite_style: "pandoc"
 nav:
-    - Inicio: index.md
+    - Inicio: README.md
     - Requerimientos: 
         - requirements/index.md
         - Características: features/index.md
