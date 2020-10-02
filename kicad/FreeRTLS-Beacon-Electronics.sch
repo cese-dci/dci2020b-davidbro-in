@@ -5,11 +5,11 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "FreeRTLS Beacon Electronics"
-Date "2020-09-02"
+Date "2020-10-02"
 Rev "WIP!"
 Comp "FreeRTLS"
-Comment1 ""
-Comment2 ""
+Comment1 "Revisor: Luciano Vittori"
+Comment2 "Author: David Broin"
 Comment3 ""
 Comment4 ""
 $EndDescr
