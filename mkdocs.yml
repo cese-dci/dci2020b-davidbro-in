@@ -23,7 +23,7 @@ nav:
     - Inicio: README.md
     - Requerimientos: 
         - requirements/index.md
-        - Características: features/index.md
+        - Características: requirements/features/index.md
     - Arquitectura: 
         - architecture/index.md
 
