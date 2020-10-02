@@ -664,12 +664,8 @@ Wire Wire Line
 	2250 2050 1800 2050
 Wire Wire Line
 	1800 1950 1800 2050
-Wire Bus Line
-	5150 3600 5150 500 
 Text Notes 3750 3550 0    50   ~ 0
 USB Connector and power supply
-Wire Bus Line
-	500  3600 5150 3600
 Wire Wire Line
 	3100 3950 3100 4050
 Wire Wire Line
@@ -685,9 +681,6 @@ Wire Wire Line
 	3100 4050 3100 4150
 Wire Wire Line
 	3100 4050 3200 4050
-Wire Bus Line
-	5150 3600 5150 7750
-Connection ~ 5150 3600
 Text Notes 4350 7700 0    50   ~ 0
 On-Board J-Link
 $Comp
@@ -960,4 +953,8 @@ Wire Wire Line
 	7250 2800 7400 2800
 Text Notes 10350 6400 0    50   ~ 0
 DecaWave DWM1001
+Wire Notes Line
+	5150 3650 500  3650
+Wire Notes Line
+	5150 500  5150 7750
 $EndSCHEMATC
