@@ -202,7 +202,7 @@ F 3 "~" H 3900 1600 50  0001 C CNN
 F 4 "https://www.digikey.com/en/products/detail/w%C3%BCrth-elektronik/150060RS75000/4489901" H 3900 1600 50  0001 C CNN "DK_Detail_Page"
 F 5 "732-4978-1-ND" H 3900 1600 50  0001 C CNN "Digi-Key_PN"
 F 6 "150060RS75000" H 3900 1600 50  0001 C CNN "MPN"
-F 7 "Würth Elektronik" H 3900 1600 50  0001 C CNN "Manufacturer"
+F 7 "Wurth Elektronik" H 3900 1600 50  0001 C CNN "Manufacturer"
 	1    3900 1600
 	0    -1   -1   0   
 $EndComp
@@ -589,7 +589,7 @@ F 3 "~" H 2150 4850 50  0001 C CNN
 F 4 "https://www.digikey.com/en/products/detail/w%C3%BCrth-elektronik/150060GS75000/4489898" H 2150 4850 50  0001 C CNN "DK_Detail_Page"
 F 5 "732-4971-1-ND" H 2150 4850 50  0001 C CNN "Digi-Key_PN"
 F 6 "150060GS75000" H 2150 4850 50  0001 C CNN "MPN"
-F 7 "Würth Elektronik" H 2150 4850 50  0001 C CNN "Manufacturer"
+F 7 "Wurth Elektronik" H 2150 4850 50  0001 C CNN "Manufacturer"
 	1    2150 4850
 	0    -1   -1   0   
 $EndComp
