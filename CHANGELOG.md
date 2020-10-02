@@ -1,3 +1,8 @@
+## 2020.10.2-build.770548505 (2020-10-02)
+
+### Mejoras (Características)
+
+- Prepara esquemático para revisión !13
 ## 2020.9.21-build.749607738 (2020-09-21)
 
 ### Mejoras (CI/CD)
