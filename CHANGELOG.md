@@ -1,3 +1,12 @@
+## 2020.10.2-build.770586589 (2020-10-02)
+
+### Mejoras (Características)
+
+- Prepara esquemático para revisión !13
+
+### Mejoras (CI/CD)
+
+- Corrige link a índice de características en nav !14
 ## 2020.10.2-build.770548505 (2020-10-02)
 
 ### Mejoras (Características)
