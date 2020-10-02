@@ -492,13 +492,9 @@ Wire Wire Line
 Wire Wire Line
 	3900 4550 3900 4600
 Wire Wire Line
-	2250 5550 2500 5550
-Wire Wire Line
 	2250 5650 2500 5650
 Wire Wire Line
 	2500 5850 2250 5850
-Text Label 2250 5550 0    50   ~ 0
-RESET
 Text Label 2250 5650 0    50   ~ 0
 SWCLK
 Text Label 2250 5850 0    50   ~ 0
@@ -977,7 +973,7 @@ Wire Wire Line
 Wire Wire Line
 	5000 1000 4700 1000
 Connection ~ 4700 1000
-NoConn ~ 2250 5550
+NoConn ~ 2500 5550
 $Comp
 L Device:L L4
 U 1 1 5F7E7895
