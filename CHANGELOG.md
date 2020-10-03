@@ -1,3 +1,8 @@
+## 2020.10.3-build.770811939 (2020-10-03)
+
+### Mejoras (CI/CD)
+
+- Corrige error en ruta de biblioteca apuntada a directorio local !15
 ## 2020.10.2-build.770586589 (2020-10-02)
 
 ### Mejoras (Características)
