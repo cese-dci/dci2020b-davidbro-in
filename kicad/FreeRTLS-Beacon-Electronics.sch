@@ -5,12 +5,12 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "FreeRTLS Beacon Electronics"
-Date "2020-10-02"
+Date "2020-10-09"
 Rev "WIP!"
 Comp "FreeRTLS"
 Comment1 ""
 Comment2 "CERN Open Hardware Licence Version 2 - Permissive"
-Comment3 "Revisor: Luciano Vittori"
+Comment3 "Reviewer: Luciano Vittori"
 Comment4 "Author: David Broin"
 $EndDescr
 $Comp
@@ -631,7 +631,7 @@ Wire Wire Line
 Connection ~ 1450 1000
 Wire Wire Line
 	1450 1000 1650 1000
-Text Notes 5100 3550 0    50   ~ 0
+Text Notes 3800 3500 0    100  ~ 0
 USB Connector and power supply
 Wire Wire Line
 	3100 3950 3100 4050
@@ -648,7 +648,7 @@ Wire Wire Line
 	3100 4050 3100 4150
 Wire Wire Line
 	3100 4050 3200 4050
-Text Notes 5700 7700 0    50   ~ 0
+Text Notes 5050 7700 0    100  ~ 0
 On-Board J-Link
 $Comp
 L Connector_Generic:Conn_02x03_Odd_Even J2
@@ -892,7 +892,7 @@ Wire Wire Line
 Connection ~ 7050 1250
 Wire Wire Line
 	7050 1250 7250 1250
-Text Notes 10300 3700 0    50   ~ 0
+Text Notes 9600 4000 0    100  ~ 0
 DecaWave DWM1001
 Wire Notes Line
 	6450 3650 500  3650
@@ -1095,7 +1095,7 @@ F 7 "American Opto Plus LED" H 10000 2400 50  0001 C CNN "Manufacturer"
 $EndComp
 Wire Notes Line
 	6450 4150 11200 4150
-Text Notes 10400 6400 0    50   ~ 0
+Text Notes 10250 6450 0    100  ~ 0
 Mechanical
 $Comp
 L Mechanical:Fiducial FID1
