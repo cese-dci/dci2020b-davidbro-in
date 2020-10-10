@@ -33,6 +33,9 @@ gerbers:
     paths:
       - gerbers.zip
     expire_in: 1 week
+  rules:
+    - changes:
+       - "**.kicad_pcb"
     
 sch_plot:
   stage: build
@@ -43,6 +46,9 @@ sch_plot:
     paths:
       - docs/$PROJECT.pdf
     expire_in: 1 week
+  rules:
+      - changes:
+         - "**.sch"
     
 bom:
   stage: build
@@ -52,6 +58,10 @@ bom:
     paths:
       - docs/$PROJECT.csv
     expire_in: 1 week
+  rules:
+      - changes:
+         - "**.kicad_pcb"
+         - "**.sch"
 
 centroid:
   stage: build
@@ -62,6 +72,9 @@ centroid:
     paths:
       - "${PROJECT}_POS_All.txt"
     expire_in: 1 week
+  rules:
+      - changes:
+         - "**.kicad_pcb"
 
 cnc_job:
   image: registry.gitlab.com/davidbro-in/flatcam-image:master
@@ -83,3 +96,6 @@ cnc_job:
     expire_in: 1 week
   dependencies:
    - gerbers
+  rules:
+     - changes:
+        - "**.kicad_pcb"

@@ -9,7 +9,7 @@
 - [ ] Jerarquía
 - [ ] Prolijidad conexiones
 - [ ] Flujo de izquierda a derecha
-- [ ] Tensiónes de arriba hacia abajo
+- [ ] Tensiones de arriba hacia abajo
 - [ ] Referencias de tensión
 - [ ] Circuitos integrados con numeración según la funcionalidad y E/S
 - [ ] Bloques funcionales bien claros
