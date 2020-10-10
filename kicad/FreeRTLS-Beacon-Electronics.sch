@@ -631,7 +631,7 @@ Wire Wire Line
 Connection ~ 1450 1000
 Wire Wire Line
 	1450 1000 1650 1000
-Text Notes 3800 3500 0    100  ~ 0
+Text Notes 3750 3500 0    100  ~ 0
 USB Connector and power supply
 Wire Wire Line
 	3100 3950 3100 4050
