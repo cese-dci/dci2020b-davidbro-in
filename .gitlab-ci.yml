@@ -33,6 +33,9 @@ gerbers:
     paths:
       - gerbers.zip
     expire_in: 1 week
+  rules:
+    - changes:
+       - "**/*.kicad_pcb"
     
 sch_plot:
   stage: build
@@ -43,6 +46,9 @@ sch_plot:
     paths:
       - docs/$PROJECT.pdf
     expire_in: 1 week
+  rules:
+      - changes:
+         - "**/*.sch"
     
 bom:
   stage: build
@@ -52,6 +58,10 @@ bom:
     paths:
       - docs/$PROJECT.csv
     expire_in: 1 week
+  rules:
+      - changes:
+         - "**/*.kicad_pcb"
+         - "**/*.sch"
 
 centroid:
   stage: build
@@ -62,6 +72,9 @@ centroid:
     paths:
       - "${PROJECT}_POS_All.txt"
     expire_in: 1 week
+  rules:
+      - changes:
+         - "**/*.kicad_pcb"
 
 cnc_job:
   image: registry.gitlab.com/davidbro-in/flatcam-image:master
@@ -76,10 +89,13 @@ cnc_job:
     - Xvfb :1 -screen 0 1024x768x16 &
     - DISPLAY=:1 python3 /flatcam/FlatCAM.py --shellfile=$CI_PROJECT_DIR/front_layer.FlatScript --headless=1 &
     - sleep 30 && killall python3
-  when: manual
   artifacts:
     paths:
       - cnc_files/
     expire_in: 1 week
   dependencies:
-   - gerbers
+    - gerbers
+  rules:
+    - changes:
+      - "**/*.kicad_pcb"
+      when: manual

@@ -5,12 +5,12 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "FreeRTLS Beacon Electronics"
-Date "2020-10-02"
+Date "2020-10-09"
 Rev "WIP!"
 Comp "FreeRTLS"
 Comment1 ""
 Comment2 "CERN Open Hardware Licence Version 2 - Permissive"
-Comment3 "Revisor: Luciano Vittori"
+Comment3 "Reviewer: Luciano Vittori"
 Comment4 "Author: David Broin"
 $EndDescr
 $Comp
@@ -46,16 +46,16 @@ $EndComp
 $Comp
 L Regulator_Linear:NCP1117-3.3_SOT223 U2
 U 1 1 5F4F1B06
-P 4500 1000
-F 0 "U2" H 4500 1242 50  0000 C CNN
-F 1 "AZ1117IH-3.3TRG1" H 4500 1151 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 4500 1200 50  0001 C CNN
-F 3 "https://www.diodes.com/assets/Datasheets/AZ1117I.pdf" H 4600 750 50  0001 C CNN
-F 4 "https://www.digikey.com/en/products/detail/diodes-incorporated/AZ1117IH-3-3TRG1/5699672" H 4500 1000 50  0001 C CNN "DK_Detail_Page"
-F 5 "AZ1117IH-3.3TRG1DICT-ND" H 4500 1000 50  0001 C CNN "Digi-Key_PN"
-F 6 "AZ1117IH-3.3TRG1" H 4500 1000 50  0001 C CNN "MPN"
-F 7 "Diodes Incorporated" H 4500 1000 50  0001 C CNN "Manufacturer"
-	1    4500 1000
+P 4150 1000
+F 0 "U2" H 4150 1242 50  0000 C CNN
+F 1 "AZ1117IH-3.3TRG1" H 4150 1151 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 4150 1200 50  0001 C CNN
+F 3 "https://www.diodes.com/assets/Datasheets/AZ1117I.pdf" H 4250 750 50  0001 C CNN
+F 4 "https://www.digikey.com/en/products/detail/diodes-incorporated/AZ1117IH-3-3TRG1/5699672" H 4150 1000 50  0001 C CNN "DK_Detail_Page"
+F 5 "AZ1117IH-3.3TRG1DICT-ND" H 4150 1000 50  0001 C CNN "Digi-Key_PN"
+F 6 "AZ1117IH-3.3TRG1" H 4150 1000 50  0001 C CNN "MPN"
+F 7 "Diodes Incorporated" H 4150 1000 50  0001 C CNN "Manufacturer"
+	1    4150 1000
 	1    0    0    -1  
 $EndComp
 NoConn ~ 3800 5450
@@ -174,45 +174,42 @@ Wire Wire Line
 Wire Wire Line
 	3500 1100 3500 1000
 Connection ~ 3500 1000
-Wire Wire Line
-	3500 1000 3900 1000
 $Comp
 L Device:R R2
 U 1 1 5F4F80D3
-P 3900 1250
-F 0 "R2" H 3970 1296 50  0000 L CNN
-F 1 "1k" H 3970 1205 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 3830 1250 50  0001 C CNN
-F 3 "~" H 3900 1250 50  0001 C CNN
-F 4 "https://www.digikey.com/en/products/detail/yageo/RC0603JR-071KL/726677" H 3900 1250 50  0001 C CNN "DK_Detail_Page"
-F 5 "311-1.0KGRCT-ND" H 3900 1250 50  0001 C CNN "Digi-Key_PN"
-F 6 "RC0603JR-071KL" H 3900 1250 50  0001 C CNN "MPN"
-F 7 "Yageo" H 3900 1250 50  0001 C CNN "Manufacturer"
-	1    3900 1250
+P 5800 1250
+F 0 "R2" H 5870 1296 50  0000 L CNN
+F 1 "1k" H 5870 1205 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 5730 1250 50  0001 C CNN
+F 3 "~" H 5800 1250 50  0001 C CNN
+F 4 "https://www.digikey.com/en/products/detail/yageo/RC0603JR-071KL/726677" H 5800 1250 50  0001 C CNN "DK_Detail_Page"
+F 5 "311-1.0KGRCT-ND" H 5800 1250 50  0001 C CNN "Digi-Key_PN"
+F 6 "RC0603JR-071KL" H 5800 1250 50  0001 C CNN "MPN"
+F 7 "Yageo" H 5800 1250 50  0001 C CNN "Manufacturer"
+	1    5800 1250
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:LED D5
 U 1 1 5F4F882D
-P 3900 1600
-F 0 "D5" V 3939 1482 50  0000 R CNN
-F 1 "LED RED" V 3848 1482 50  0000 R CNN
-F 2 "LED_SMD:LED_0603_1608Metric_Castellated" H 3900 1600 50  0001 C CNN
-F 3 "~" H 3900 1600 50  0001 C CNN
-F 4 "https://www.digikey.com/en/products/detail/w%C3%BCrth-elektronik/150060RS75000/4489901" H 3900 1600 50  0001 C CNN "DK_Detail_Page"
-F 5 "732-4978-1-ND" H 3900 1600 50  0001 C CNN "Digi-Key_PN"
-F 6 "150060RS75000" H 3900 1600 50  0001 C CNN "MPN"
-F 7 "Wurth Elektronik" H 3900 1600 50  0001 C CNN "Manufacturer"
-	1    3900 1600
+P 5800 1600
+F 0 "D5" V 5839 1482 50  0000 R CNN
+F 1 "Power On" V 5748 1482 50  0000 R CNN
+F 2 "LED_SMD:LED_0603_1608Metric_Castellated" H 5800 1600 50  0001 C CNN
+F 3 "~" H 5800 1600 50  0001 C CNN
+F 4 "https://www.digikey.com/en/products/detail/w%C3%BCrth-elektronik/150060RS75000/4489901" H 5800 1600 50  0001 C CNN "DK_Detail_Page"
+F 5 "732-4978-1-ND" H 5800 1600 50  0001 C CNN "Digi-Key_PN"
+F 6 "150060RS75000" H 5800 1600 50  0001 C CNN "MPN"
+F 7 "Wurth Elektronik" H 5800 1600 50  0001 C CNN "Manufacturer"
+	1    5800 1600
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	3900 1100 3900 1000
-Connection ~ 3900 1000
+	5800 1100 5800 1000
 Wire Wire Line
-	3900 1000 4200 1000
+	3500 1000 3850 1000
 Wire Wire Line
-	3900 1400 3900 1450
+	5800 1400 5800 1450
 $Comp
 L power:GND #PWR011
 U 1 1 5F4F9649
@@ -238,23 +235,23 @@ $EndComp
 $Comp
 L power:GND #PWR015
 U 1 1 5F4FA5A8
-P 3900 1850
-F 0 "#PWR015" H 3900 1600 50  0001 C CNN
-F 1 "GND" H 3905 1677 50  0000 C CNN
-F 2 "" H 3900 1850 50  0001 C CNN
-F 3 "" H 3900 1850 50  0001 C CNN
-	1    3900 1850
+P 5800 1850
+F 0 "#PWR015" H 5800 1600 50  0001 C CNN
+F 1 "GND" H 5805 1677 50  0000 C CNN
+F 2 "" H 5800 1850 50  0001 C CNN
+F 3 "" H 5800 1850 50  0001 C CNN
+	1    5800 1850
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR016
 U 1 1 5F4FAA35
-P 4500 1450
-F 0 "#PWR016" H 4500 1200 50  0001 C CNN
-F 1 "GND" H 4505 1277 50  0000 C CNN
-F 2 "" H 4500 1450 50  0001 C CNN
-F 3 "" H 4500 1450 50  0001 C CNN
-	1    4500 1450
+P 4150 1450
+F 0 "#PWR016" H 4150 1200 50  0001 C CNN
+F 1 "GND" H 4155 1277 50  0000 C CNN
+F 2 "" H 4150 1450 50  0001 C CNN
+F 3 "" H 4150 1450 50  0001 C CNN
+	1    4150 1450
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -262,59 +259,59 @@ Wire Wire Line
 Wire Wire Line
 	3500 1400 3500 1500
 Wire Wire Line
-	3900 1750 3900 1850
+	5800 1750 5800 1850
 Wire Wire Line
-	4500 1450 4500 1300
+	4150 1450 4150 1300
 $Comp
 L Device:CP C7
 U 1 1 5F4FC537
-P 5000 1200
-F 0 "C7" H 5118 1246 50  0000 L CNN
-F 1 "10uF" H 5118 1155 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 5038 1050 50  0001 C CNN
-F 3 "~" H 5000 1200 50  0001 C CNN
-F 4 "https://www.digikey.com/en/products/detail/venkel/C0603X6S100-106MNP/12332839" H 5000 1200 50  0001 C CNN "DK_Detail_Page"
-F 5 "2679-C0603X6S100-106MNPTR-ND" H 5000 1200 50  0001 C CNN "Digi-Key_PN"
-F 6 "C0603X6S100-106MNP" H 5000 1200 50  0001 C CNN "MPN"
-F 7 "Venkel" H 5000 1200 50  0001 C CNN "Manufacturer"
-	1    5000 1200
+P 4650 1200
+F 0 "C7" H 4768 1246 50  0000 L CNN
+F 1 "10uF" H 4768 1155 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 4688 1050 50  0001 C CNN
+F 3 "~" H 4650 1200 50  0001 C CNN
+F 4 "https://www.digikey.com/en/products/detail/venkel/C0603X6S100-106MNP/12332839" H 4650 1200 50  0001 C CNN "DK_Detail_Page"
+F 5 "2679-C0603X6S100-106MNPTR-ND" H 4650 1200 50  0001 C CNN "Digi-Key_PN"
+F 6 "C0603X6S100-106MNP" H 4650 1200 50  0001 C CNN "MPN"
+F 7 "Venkel" H 4650 1200 50  0001 C CNN "Manufacturer"
+	1    4650 1200
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR018
 U 1 1 5F4FCE82
-P 5000 1450
-F 0 "#PWR018" H 5000 1200 50  0001 C CNN
-F 1 "GND" H 5005 1277 50  0000 C CNN
-F 2 "" H 5000 1450 50  0001 C CNN
-F 3 "" H 5000 1450 50  0001 C CNN
-	1    5000 1450
+P 4650 1450
+F 0 "#PWR018" H 4650 1200 50  0001 C CNN
+F 1 "GND" H 4655 1277 50  0000 C CNN
+F 2 "" H 4650 1450 50  0001 C CNN
+F 3 "" H 4650 1450 50  0001 C CNN
+	1    4650 1450
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:L L3
 U 1 1 5F4FD73B
-P 5450 1000
-F 0 "L3" V 5550 1000 50  0000 C CNN
-F 1 "MPZ1608S601ATA00" V 5350 800 50  0000 C CNN
-F 2 "Inductor_SMD:L_0603_1608Metric" H 5450 1000 50  0001 C CNN
-F 3 "~" H 5450 1000 50  0001 C CNN
-F 4 "https://www.digikey.com/en/products/detail/tdk-corporation/MPZ1608S601ATA00/765064" H 5450 1000 50  0001 C CNN "DK_Detail_Page"
-F 5 "445-2205-1-ND" H 5450 1000 50  0001 C CNN "Digi-Key_PN"
-F 6 "MPZ1608S601ATA00" H 5450 1000 50  0001 C CNN "MPN"
-F 7 "TDK Corporation" H 5450 1000 50  0001 C CNN "Manufacturer"
-	1    5450 1000
+P 5150 1000
+F 0 "L3" V 5250 1000 50  0000 C CNN
+F 1 "MPZ1608S601ATA00" V 5050 800 50  0000 C CNN
+F 2 "Inductor_SMD:L_0603_1608Metric" H 5150 1000 50  0001 C CNN
+F 3 "~" H 5150 1000 50  0001 C CNN
+F 4 "https://www.digikey.com/en/products/detail/tdk-corporation/MPZ1608S601ATA00/765064" H 5150 1000 50  0001 C CNN "DK_Detail_Page"
+F 5 "445-2205-1-ND" H 5150 1000 50  0001 C CNN "Digi-Key_PN"
+F 6 "MPZ1608S601ATA00" H 5150 1000 50  0001 C CNN "MPN"
+F 7 "TDK Corporation" H 5150 1000 50  0001 C CNN "Manufacturer"
+	1    5150 1000
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	4800 1000 5000 1000
+	4450 1000 4650 1000
 Wire Wire Line
-	5000 1050 5000 1000
-Connection ~ 5000 1000
+	4650 1050 4650 1000
+Connection ~ 4650 1000
 Wire Wire Line
-	5000 1000 5300 1000
+	4650 1000 5000 1000
 Wire Wire Line
-	5000 1350 5000 1450
+	4650 1350 4650 1450
 $Comp
 L power:+3V3 #PWR019
 U 1 1 5F502BBF
@@ -329,7 +326,7 @@ $EndComp
 Wire Wire Line
 	5800 850  5800 1000
 Wire Wire Line
-	5800 1000 5600 1000
+	5800 1000 5300 1000
 $Comp
 L power:GND #PWR01
 U 1 1 5F50CB2D
@@ -583,7 +580,7 @@ L Device:LED D3
 U 1 1 5F5684FF
 P 2150 4850
 F 0 "D3" V 2150 5050 50  0000 R CNN
-F 1 "LED GREEN" V 2050 5300 50  0000 R CNN
+F 1 "J-Link Status" V 2050 5400 50  0000 R CNN
 F 2 "LED_SMD:LED_0603_1608Metric" H 2150 4850 50  0001 C CNN
 F 3 "~" H 2150 4850 50  0001 C CNN
 F 4 "https://www.digikey.com/en/products/detail/w%C3%BCrth-elektronik/150060GS75000/4489898" H 2150 4850 50  0001 C CNN "DK_Detail_Page"
@@ -634,7 +631,7 @@ Wire Wire Line
 Connection ~ 1450 1000
 Wire Wire Line
 	1450 1000 1650 1000
-Text Notes 5100 3550 0    50   ~ 0
+Text Notes 3750 3500 0    100  ~ 0
 USB Connector and power supply
 Wire Wire Line
 	3100 3950 3100 4050
@@ -651,14 +648,14 @@ Wire Wire Line
 	3100 4050 3100 4150
 Wire Wire Line
 	3100 4050 3200 4050
-Text Notes 5700 7700 0    50   ~ 0
+Text Notes 5050 7700 0    100  ~ 0
 On-Board J-Link
 $Comp
 L Connector_Generic:Conn_02x03_Odd_Even J2
 U 1 1 5F707F62
 P 1650 6850
 F 0 "J2" H 1700 7167 50  0000 C CNN
-F 1 "TC2030" H 1700 7076 50  0000 C CNN
+F 1 "STM Prog" H 1700 7076 50  0000 C CNN
 F 2 "Connector:Tag-Connect_TC2030-IDC-FP_2x03_P1.27mm_Vertical" H 1650 6850 50  0001 C CNN
 F 3 "~" H 1650 6850 50  0001 C CNN
 	1    1650 6850
@@ -895,7 +892,7 @@ Wire Wire Line
 Connection ~ 7050 1250
 Wire Wire Line
 	7050 1250 7250 1250
-Text Notes 10300 3700 0    50   ~ 0
+Text Notes 9600 4000 0    100  ~ 0
 DecaWave DWM1001
 Wire Notes Line
 	6450 3650 500  3650
@@ -906,16 +903,16 @@ Wire Wire Line
 $Comp
 L power:PWR_FLAG #FLG0101
 U 1 1 5F7CC472
-P 3900 850
-F 0 "#FLG0101" H 3900 925 50  0001 C CNN
-F 1 "PWR_FLAG" H 3900 1023 50  0000 C CNN
-F 2 "" H 3900 850 50  0001 C CNN
-F 3 "~" H 3900 850 50  0001 C CNN
-	1    3900 850 
+P 3500 850
+F 0 "#FLG0101" H 3500 925 50  0001 C CNN
+F 1 "PWR_FLAG" H 3500 1023 50  0000 C CNN
+F 2 "" H 3500 850 50  0001 C CNN
+F 3 "~" H 3500 850 50  0001 C CNN
+	1    3500 850 
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3900 850  3900 1000
+	3500 850  3500 1000
 $Comp
 L power:PWR_FLAG #FLG0102
 U 1 1 5F7D1FCE
@@ -1086,7 +1083,7 @@ L Device:LED_Dual_CACA D6
 U 1 1 5F78DD65
 P 10000 2400
 F 0 "D6" V 10046 2190 50  0000 R CNN
-F 1 "L955QEQGC-TR" V 9955 2190 50  0000 R CNN
+F 1 "DW1000 Tx / Rx" V 9955 2190 50  0000 R CNN
 F 2 "FreeRTLS-Beacon:LED_L955QEQGC-TR_3.2x2.7mm_P1.7mm" H 10030 2400 50  0001 C CNN
 F 3 "https://www.aopled.com/AOP_PDFs/L955QEQGC-TR.pdf" H 10030 2400 50  0001 C CNN
 F 4 "https://www.digikey.com/en/products/detail/american-opto-plus-led/L955QEQGC-TR/13243458" H 10000 2400 50  0001 C CNN "DK_Detail_Page"
@@ -1098,7 +1095,7 @@ F 7 "American Opto Plus LED" H 10000 2400 50  0001 C CNN "Manufacturer"
 $EndComp
 Wire Notes Line
 	6450 4150 11200 4150
-Text Notes 10400 6400 0    50   ~ 0
+Text Notes 10250 6450 0    100  ~ 0
 Mechanical
 $Comp
 L Mechanical:Fiducial FID1
