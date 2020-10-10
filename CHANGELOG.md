@@ -1,3 +1,8 @@
+## 2020.10.10-build.783535341 (2020-10-10)
+
+### Mejoras (CI/CD)
+
+- Corrige path de templates para merge requests !17
 ## 2020.10.10-build.783532216 (2020-10-10)
 
 ### Mejoras (CI/CD)
