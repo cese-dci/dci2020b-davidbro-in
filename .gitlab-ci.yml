@@ -89,13 +89,13 @@ cnc_job:
     - Xvfb :1 -screen 0 1024x768x16 &
     - DISPLAY=:1 python3 /flatcam/FlatCAM.py --shellfile=$CI_PROJECT_DIR/front_layer.FlatScript --headless=1 &
     - sleep 30 && killall python3
-  when: manual
   artifacts:
     paths:
       - cnc_files/
     expire_in: 1 week
   dependencies:
-   - gerbers
+    - gerbers
   rules:
-     - changes:
-        - "**.kicad_pcb"
+    - changes:
+      - "**.kicad_pcb"
+      when: manual
