@@ -1,3 +1,8 @@
+## 2020.10.10-build.783532216 (2020-10-10)
+
+### Mejoras (CI/CD)
+
+- Cambia LED a 3v3 y mejorar textos (tamaño/idioma) !16
 ## 2020.10.3-build.770811939 (2020-10-03)
 
 ### Mejoras (CI/CD)
