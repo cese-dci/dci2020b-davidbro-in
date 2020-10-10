@@ -35,7 +35,7 @@ gerbers:
     expire_in: 1 week
   rules:
     - changes:
-       - "**.kicad_pcb"
+       - "**/*.kicad_pcb"
     
 sch_plot:
   stage: build
@@ -48,7 +48,7 @@ sch_plot:
     expire_in: 1 week
   rules:
       - changes:
-         - "**.sch"
+         - "**/*.sch"
     
 bom:
   stage: build
@@ -60,8 +60,8 @@ bom:
     expire_in: 1 week
   rules:
       - changes:
-         - "**.kicad_pcb"
-         - "**.sch"
+         - "**/*.kicad_pcb"
+         - "**/*.sch"
 
 centroid:
   stage: build
@@ -74,7 +74,7 @@ centroid:
     expire_in: 1 week
   rules:
       - changes:
-         - "**.kicad_pcb"
+         - "**/*.kicad_pcb"
 
 cnc_job:
   image: registry.gitlab.com/davidbro-in/flatcam-image:master
@@ -97,5 +97,5 @@ cnc_job:
     - gerbers
   rules:
     - changes:
-      - "**.kicad_pcb"
+      - "**/*.kicad_pcb"
       when: manual
