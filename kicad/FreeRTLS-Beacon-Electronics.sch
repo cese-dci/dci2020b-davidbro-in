@@ -195,7 +195,7 @@ U 1 1 5F4F882D
 P 5800 1600
 F 0 "D5" V 5839 1482 50  0000 R CNN
 F 1 "Power On" V 5748 1482 50  0000 R CNN
-F 2 "LED_SMD:LED_0603_1608Metric_Castellated" H 5800 1600 50  0001 C CNN
+F 2 "LED_SMD:LED_0603_1608Metric" H 5800 1600 50  0001 C CNN
 F 3 "~" H 5800 1600 50  0001 C CNN
 F 4 "https://www.digikey.com/en/products/detail/w%C3%BCrth-elektronik/150060RS75000/4489901" H 5800 1600 50  0001 C CNN "DK_Detail_Page"
 F 5 "732-4978-1-ND" H 5800 1600 50  0001 C CNN "Digi-Key_PN"
@@ -977,15 +977,9 @@ Wire Wire Line
 Wire Wire Line
 	2600 2850 2600 2100
 Wire Wire Line
-	2550 2850 2600 2850
-Wire Wire Line
 	1950 2000 1950 2100
 Wire Wire Line
 	1500 2100 1950 2100
-Wire Wire Line
-	1500 2850 1500 2100
-Wire Wire Line
-	1550 2850 1500 2850
 $Comp
 L power:VBUS #PWR07
 U 1 1 5F55F435
@@ -1025,7 +1019,7 @@ F 5 "1727-3884-1-ND" H 2050 2850 50  0001 C CNN "Digi-Key_PN"
 F 6 "PRTR5V0U2X,215" H 2050 2850 50  0001 C CNN "MPN"
 F 7 "Nexperia USA Inc." H 2050 2850 50  0001 C CNN "Manufacturer"
 	1    2050 2850
-	1    0    0    -1  
+	-1   0    0    -1  
 $EndComp
 Text Label 2150 2100 0    50   ~ 0
 MCU_D+
@@ -1169,7 +1163,7 @@ U 1 1 5F7B32ED
 P 10400 6000
 F 0 "FID4" H 10485 6046 50  0000 L CNN
 F 1 "Fiducial" H 10250 5900 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3" H 10400 6000 50  0001 C CNN
+F 2 "Fiducial:Fiducial_0.5mm_Mask1.5mm" H 10400 6000 50  0001 C CNN
 F 3 "~" H 10400 6000 50  0001 C CNN
 	1    10400 6000
 	1    0    0    -1  
@@ -1185,4 +1179,21 @@ F 3 "~" H 10400 5600 50  0001 C CNN
 	1    10400 5600
 	1    0    0    -1  
 $EndComp
+$Comp
+L Graphic:Logo_Open_Hardware_Small #LOGO1
+U 1 1 5F9DF196
+P 7800 5800
+F 0 "#LOGO1" H 7800 6075 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 7800 5575 50  0001 C CNN
+F 2 "Symbol:OSHW-Logo_5.7x6mm_SilkScreen" H 7800 5800 50  0001 C CNN
+F 3 "~" H 7800 5800 50  0001 C CNN
+	1    7800 5800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1500 2850 1500 2100
+Wire Wire Line
+	1550 2850 1500 2850
+Wire Wire Line
+	2550 2850 2600 2850
 $EndSCHEMATC
