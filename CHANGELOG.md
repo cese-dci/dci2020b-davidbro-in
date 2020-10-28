@@ -1,3 +1,8 @@
+## 2020.10.28-build.817990043 (2020-10-28)
+
+### Nuevas (Características)
+
+- Routea PCB !18
 ## 2020.10.10-build.783535341 (2020-10-10)
 
 ### Mejoras (CI/CD)
