@@ -977,15 +977,9 @@ Wire Wire Line
 Wire Wire Line
 	2600 2850 2600 2100
 Wire Wire Line
-	2550 2850 2600 2850
-Wire Wire Line
 	1950 2000 1950 2100
 Wire Wire Line
 	1500 2100 1950 2100
-Wire Wire Line
-	1500 2850 1500 2100
-Wire Wire Line
-	1550 2850 1500 2850
 $Comp
 L power:VBUS #PWR07
 U 1 1 5F55F435
@@ -1025,7 +1019,7 @@ F 5 "1727-3884-1-ND" H 2050 2850 50  0001 C CNN "Digi-Key_PN"
 F 6 "PRTR5V0U2X,215" H 2050 2850 50  0001 C CNN "MPN"
 F 7 "Nexperia USA Inc." H 2050 2850 50  0001 C CNN "Manufacturer"
 	1    2050 2850
-	1    0    0    -1  
+	-1   0    0    -1  
 $EndComp
 Text Label 2150 2100 0    50   ~ 0
 MCU_D+
@@ -1196,4 +1190,10 @@ F 3 "~" H 7800 5800 50  0001 C CNN
 	1    7800 5800
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	1500 2850 1500 2100
+Wire Wire Line
+	1550 2850 1500 2850
+Wire Wire Line
+	2550 2850 2600 2850
 $EndSCHEMATC
