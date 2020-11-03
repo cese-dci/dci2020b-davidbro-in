@@ -1,3 +1,8 @@
+## 2020.11.3-build.826836119 (2020-11-03)
+
+### Mejoras (CI/CD)
+
+- Agrega PCB Specification !19
 ## 2020.10.28-build.817990043 (2020-10-28)
 
 ### Nuevas (Características)
